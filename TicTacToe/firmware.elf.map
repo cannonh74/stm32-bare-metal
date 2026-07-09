@@ -1,0 +1,159 @@
+
+Discarded input sections
+
+ .group         0x00000000        0xc /tmp/ccxhOwKY.o
+ .group         0x00000000        0xc /tmp/ccxhOwKY.o
+ .text          0x00000000        0x0 /tmp/ccxhOwKY.o
+ .data          0x00000000        0x0 /tmp/ccxhOwKY.o
+ .bss           0x00000000        0x0 /tmp/ccxhOwKY.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+flash            0x08000000         0x00010000         xr
+sram             0x20000000         0x00005000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /tmp/ccxhOwKY.o
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a
+LOAD /usr/lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a
+                0x20005000                        _estack = (ORIGIN (sram) + LENGTH (sram))
+
+.vectors        0x08000000        0x8
+ *(.vectors)
+ .vectors       0x08000000        0x8 /tmp/ccxhOwKY.o
+                0x08000000                tab
+
+.text           0x08000008      0x5e8
+ *(.text*)
+ .text.gpio_reg
+                0x08000008       0x1a /tmp/ccxhOwKY.o
+ .text.gpio_config
+                0x08000022       0x6e /tmp/ccxhOwKY.o
+ .text.gpio_write
+                0x08000090       0x42 /tmp/ccxhOwKY.o
+ .text.gpio_read
+                0x080000d2       0x2c /tmp/ccxhOwKY.o
+ .text.delay    0x080000fe       0x20 /tmp/ccxhOwKY.o
+ *fill*         0x0800011e        0x2 
+ .text.gpio_setup
+                0x08000120       0x98 /tmp/ccxhOwKY.o
+ .text.board_reset
+                0x080001b8       0x38 /tmp/ccxhOwKY.o
+ .text.check_win_line
+                0x080001f0       0x90 /tmp/ccxhOwKY.o
+ .text.board_full
+                0x08000280       0x38 /tmp/ccxhOwKY.o
+ .text.flash_cells
+                0x080002b8       0x94 /tmp/ccxhOwKY.o
+ .text.play_end_animation
+                0x0800034c       0x74 /tmp/ccxhOwKY.o
+ .text.update_leds
+                0x080003c0       0x80 /tmp/ccxhOwKY.o
+ .text.main     0x08000440      0x16c /tmp/ccxhOwKY.o
+                0x08000440                main
+ .text._reset   0x080005ac       0x44 /tmp/ccxhOwKY.o
+                0x080005ac                _reset
+
+.glue_7         0x080005f0        0x0
+ .glue_7        0x080005f0        0x0 linker stubs
+
+.glue_7t        0x080005f0        0x0
+ .glue_7t       0x080005f0        0x0 linker stubs
+
+.vfp11_veneer   0x080005f0        0x0
+ .vfp11_veneer  0x080005f0        0x0 linker stubs
+
+.v4_bx          0x080005f0        0x0
+ .v4_bx         0x080005f0        0x0 linker stubs
+
+.iplt           0x080005f0        0x0
+ .iplt          0x080005f0        0x0 /tmp/ccxhOwKY.o
+
+.rodata         0x080005f0       0xb1
+ *(.rodata*)
+ .rodata.CELL_IN
+                0x080005f0       0x48 /tmp/ccxhOwKY.o
+ .rodata.CELL_OUT
+                0x08000638       0x48 /tmp/ccxhOwKY.o
+ .rodata.WIN_LINES
+                0x08000680       0x18 /tmp/ccxhOwKY.o
+ .rodata        0x08000698        0x9 /tmp/ccxhOwKY.o
+
+.rel.dyn        0x080006a4        0x0
+ .rel.iplt      0x080006a4        0x0 /tmp/ccxhOwKY.o
+
+.data           0x20000000        0x0 load address 0x080006a1
+                0x20000000                        _sdata = .
+ *(.first_data)
+ *(.data SORT_BY_NAME(.data.*))
+                0x20000000                        _edata = .
+                0x080006a1                        _sidata = LOADADDR (.data)
+
+.igot.plt       0x20000000        0x0 load address 0x080006a1
+ .igot.plt      0x20000000        0x0 /tmp/ccxhOwKY.o
+
+.bss            0x20000000       0x31 load address 0x080006a1
+                0x20000000                        _sbss = .
+ *(.bss SORT_BY_NAME(.bss.*) COMMON)
+ .bss.blink_phase
+                0x20000000        0x1 /tmp/ccxhOwKY.o
+ *fill*         0x20000001        0x3 
+ .bss.board     0x20000004        0x9 /tmp/ccxhOwKY.o
+ .bss.current_player
+                0x2000000d        0x1 /tmp/ccxhOwKY.o
+ *fill*         0x2000000e        0x2 
+ .bss.debounce_candidate
+                0x20000010        0x9 /tmp/ccxhOwKY.o
+ *fill*         0x20000019        0x3 
+ .bss.debounce_count
+                0x2000001c        0x9 /tmp/ccxhOwKY.o
+ *fill*         0x20000025        0x3 
+ .bss.stable_state
+                0x20000028        0x9 /tmp/ccxhOwKY.o
+                0x20000031                        _ebss = .
+                0x20000038                        . = ALIGN (0x8)
+                0x20000038                        _end = .
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+
+.debug_info     0x00000000      0x637
+ .debug_info    0x00000000      0x637 /tmp/ccxhOwKY.o
+
+.debug_abbrev   0x00000000      0x209
+ .debug_abbrev  0x00000000      0x209 /tmp/ccxhOwKY.o
+
+.debug_aranges  0x00000000       0x88
+ .debug_aranges
+                0x00000000       0x88 /tmp/ccxhOwKY.o
+
+.debug_rnglists
+                0x00000000       0x66
+ .debug_rnglists
+                0x00000000       0x66 /tmp/ccxhOwKY.o
+
+.debug_macro    0x00000000      0xea6
+ .debug_macro   0x00000000       0x9e /tmp/ccxhOwKY.o
+ .debug_macro   0x0000009e      0xaba /tmp/ccxhOwKY.o
+ .debug_macro   0x00000b58      0x34e /tmp/ccxhOwKY.o
+
+.debug_line     0x00000000      0x4d0
+ .debug_line    0x00000000      0x4d0 /tmp/ccxhOwKY.o
+
+.debug_str      0x00000000     0x3a71
+ .debug_str     0x00000000     0x3a71 /tmp/ccxhOwKY.o
+                               0x3bf6 (size before relaxing)
+
+.comment        0x00000000       0x26
+ .comment       0x00000000       0x26 /tmp/ccxhOwKY.o
+                                 0x27 (size before relaxing)
+
+.ARM.attributes
+                0x00000000       0x2d
+ .ARM.attributes
+                0x00000000       0x2d /tmp/ccxhOwKY.o
+
+.debug_frame    0x00000000      0x208
+ .debug_frame   0x00000000      0x208 /tmp/ccxhOwKY.o

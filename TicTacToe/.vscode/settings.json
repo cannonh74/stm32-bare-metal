@@ -1,0 +1,11 @@
+{
+    "cortex-debug.armToolchainPath": "/usr/bin/",
+    "cortex-debug.gdbPath": "/usr/bin/gdb-multiarch",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/cannon/stm32/stm32-bare-metal/TicTacToe",
+            "binaryPath": "/home/cannon/stm32/stm32-bare-metal/TicTacToe/firmware.elf",
+            "binaryArgs": []
+        }
+    ]
+}
